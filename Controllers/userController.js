@@ -41,22 +41,6 @@ exports.login = async (req, res) => {
     }
 }
 
-// exports.editUser = async (req, res) => {
-//     const userId = req.payload
-//     const { username, password, email, linkedin, profileImage } = req.body
-//     const profile = req.file ? req.file.filename : profileImage
-//     try {
-//         const updateUser = await users.findByIdAndUpdate({ _id: userId }, {
-//             username, email, password, profile, github, linkedin
-//         }, { new: true })
-//         await updateUser.save();
-//         res.status(200).json(updateUser)
-//     } catch (error) {
-//         console.log(error);
-//         res.status(401).json(error)
-//     }
-// }
-
 exports.editUser = async (req,res)=>{
     const userId = req.payload
     const {username,email,password,github,linkedin,profile} = req.body
